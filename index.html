@@ -14,6 +14,10 @@
 
     <!-- It help loading the script after the html document-->
     <script defer src="index.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -71,162 +75,107 @@
         </div>
     </div>
 
-        <!--The main section-->
-        <div class="container-fluid border border-dark border-1 mt-5">
-            <!--Services section-->
-            <section class="container border border-dark border-1 my-4" id="services">
-                <h2>Services</h2>
-                <div class="card">
-                    <img class="card-img-top" src="images/img1.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">A random text about the price</p>
-                        <a href="#barbers" class="btn btn-primary">Choose barber</a>
-                    </div>
-                </div>
-            </section>
     <!--The main section-->
-    <div>
+    <div class="container-fluid border border-dark border-1 mt-5">
         <!--Services section-->
-        <section class="" id="services">
-
+        <section class="container border border-dark border-1 my-4" id="services">
+            <h2>Services</h2>
+            <div class="card">
+                <img class="card-img-top" src="images/img1.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">John Doe</h4>
+                    <p class="card-text">A random text about the price</p>
+                    <a href="#barbers" class="btn btn-primary">Choose barber</a>
+                </div>
+            </div>
         </section>
-                <div class="card">
-                    <img class="card-img-top" src="images/img1.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">A random text about the price</p>
-                        <a href="#barbers" class="btn btn-primary">Choose barber</a>
-                    </div>
+
+
+         <!--barbers section-->
+         <section class="container border border-dark border-1 my-4" id="barbers">
+            <h2>Our barbers</h2>
+            <div class="card">
+                <img class="card-img-top" src="images/img1.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">John Doe</h4>
+                    <p class="card-text">A random text about the price</p>
+                    <a href="#appointment" class="btn btn-primary">Choose barber</a>
                 </div>
-                <div class="card">
-                    <img class="card-img-top" src="images/img1.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">A random text about the price</p>
-                        <a href="#barbers" class="btn btn-primary">Choose barber</a>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="images/img1.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">John Doe</h4>
+                    <p class="card-text">A random text about the price</p>
+                    <a href="#appointment" class="btn btn-primary">Choose barber</a>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="images/img1.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">John Doe</h4>
+                    <p class="card-text">A random text about the price</p>
+                    <a href="#appointment" class="btn btn-primary">Choose barber</a>
+                </div>
+            </div>
+        </section>
+
+         <!--Appointment section-->
+         <section class="container  px-4 my-4" id="appointment">
+            <h2>Appointment</h2>
+            <form id="appointmentForm">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputDate4">Date</label>
+                        <input type="date" class="form-control" id="inputDate4" placeholder="Date">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputTime4">Time</label>
+                        <input type="time" class="form-control" id="inputTime4" placeholder="Time">
                     </div>
                 </div>
 
-            </section>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="First name" id="firstName">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Last name" id="lastName">
+                    </div>
+                </div>
 
-            <!--barbers section-->
-            <section class="container border border-dark border-1 my-4" id="barbers">
-                <h2>Our barbers</h2>
-                <div class="card">
-                    <img class="card-img-top" src="images/img1.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">A random text about the price</p>
-                        <a href="#appointment" class="btn btn-primary">Choose barber</a>
-                    </div>
-                </div>
-        <!--barbers section-->
-        <section class="" id="barbers">
-                <div class="card">
-                    <img class="card-img-top" src="images/img1.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">A random text about the price</p>
-                        <a href="#appointment" class="btn btn-primary">Choose barber</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="images/img1.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">A random text about the price</p>
-                        <a href="#appointment" class="btn btn-primary">Choose barber</a>
-                    </div>
-                </div>
-                
+                <button type="button" class="btn btn-primary mt-3" data-toggle="modal"
+                    data-target="#confirmationModal">Submit appointment</button>
+            </form>
 
-            </section>
-            <!--Appointment section-->
-            <section class="container-fluid border border-dark border-1 px-4 my-4" id="appointment">
-                <h2>Appointment</h2>
-            </section>
-        </div>
-        
+            <!-- Modal -->
+            <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Appointment Confirmation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Appointment request submitted!</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     </div>
+
         <footer>
 
         </footer>
-    </body>
-        </section>
-        <!--Appointment section-->
-        <section class="container mt-5" id="appointment">
-            <form id="appointmentForm">
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputDate4">Date</label>
-                  <input type="date" class="form-control" id="inputDate4" placeholder="Date">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputTime4">Time</label>
-                  <input type="time" class="form-control" id="inputTime4" placeholder="Time">
-                </div>
-              </div>
-          
-              <div class="form-row">
-                <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="First name" id="firstName">
-                </div>
-                <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="Last name" id="lastName">
-                </div>
-              </div>
-          
-              <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#confirmationModal">Submit appointment</button>
-            </form>
-          
-            <!-- Modal -->
-            <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Appointment Confirmation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <p>Appointment request submitted!</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          
-          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-          
-          <script>
-            function submitAppointment() {
-              // Your form submission logic goes here
-          
-              // Clear the form
-              document.getElementById("appointmentForm").reset();
-          
-              // Show the confirmation modal
-              $('#confirmationModal').modal('show');
-            }
-          
-            // Reset the form when the modal is hidden
-            $('#confirmationModal').on('hidden.bs.modal', function () {
-              document.getElementById("appointmentForm").reset();
-            });
-          </script>
 
-
-    </div>
-
-    <footer>
-
-    </footer>
 </body>
 
 </html>
