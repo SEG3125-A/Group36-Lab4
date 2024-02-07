@@ -24,3 +24,10 @@ body{
     height: 30px;
     color: aqua;
 }
+
+section h2{
+    text-align: center;
+}
+.card{
+    width: 200px;
+}
