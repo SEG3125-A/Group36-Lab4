@@ -10,102 +10,59 @@ let clientCart=[];
 let filteredItems=[]; //result of the filtering items by restrictions and preferences
 
 //All items
-let allItems=[
+let allServices=[
     {
-        name:"Chicken",
-        restrictions:["none"],
-        preferences:["non-organic","all"],
-        category:"meats",
+        name:"short cut",
+        description:["A haircut starting from short hair"],
         price:20,
         picture:"images/chicken.jpg",
     },
+
     {
-        name:"Broccoli",
-        restrictions:["vegetarian","gluten-free","none"],
-        preferences:["organic","all"],
-        category:"vegetables",
-        price:7,
-        picture:"images/broccoli.jpg",
+        name:"long cut",
+        description:["A haircut starting from long hair"],
+        price:28,
+        picture:"images/chicken.jpg",
+    },
+
+    {
+        name:"long cut",
+        description:["A haircut starting from long hair"],
+        price:28,
+        picture:"images/chicken.jpg",
     },
     {
-        name:"Mushroom",
-        restrictions:["vegetarian","gluten-free","none"],
-        preferences:["non-organic","all"],
-        category:"vegetables",
-        price:8,
-        picture:"images/mushroom.jpg",
+        name:"long cut",
+        description:["A haircut starting from long hair"],
+        price:28,
+        picture:"images/chicken.jpg",
+    },
+
+
+];
+
+let allBarbers=[
+    {
+        name:"short cut",
+        description:["A haircut starting from short hair"],
+        picture:"images/chicken.jpg",
+    },
+
+    {
+        name:"long cut",
+        description:["A haircut starting from long hair"],
+        picture:"images/chicken.jpg",
+    },
+
+    {
+        name:"long cut",
+        description:["A haircut starting from long hair"],
+        picture:"images/chicken.jpg",
     },
     {
-        name:"Potato",
-        restrictions:["vegetarian","gluten-free","none"],
-        preferences:["non-organic","all"],
-        category:"vegetables",
-        price:10,
-        picture:"images/potato.jpg",
-    },
-    {
-        name:"Milk",
-        restrictions:["none"],
-        preferences:["organic","all"],
-        category:"dairy",
-        price:5,
-        picture:"images/milk.png",
-    },
-    {
-        name:"Pork",
-        restrictions:["none"],
-        preferences:["organic","non-organic","all"],
-        category:"meats",
-        price:30,
-        picture:"images/pork.jpg",
-    },
-    {
-        name:"Cheese",
-        restrictions:["gluten-free","none"],
-        preferences:["organic","all"],
-        category:"dairy",
-        price:10,
-        picture:"images/cheese.jpg",
-    },
-    {
-        name:"Tomato",
-        restrictions:["vegetarian","gluten-free","none"],
-        preferences:["organic","all"],
-        category:"fruits",
-        price:7,
-        picture:"images/tomato.jpg",
-    },
-    {
-        name:"Tofu",
-        restrictions:["vegetarian","gluten-free","none"],
-        preferences:["non-organic","all"],
-        category:"vegetables",
-        price:10,
-        picture:"images/tofu.jpg",
-    },
-    {
-        name:"Sausage",
-        restrictions:["none"],
-        preferences:["organic","all"],
-        category:"meats",
-        price:8,
-        picture:"images/sausage.jpg",
-    },
-    {
-        name:"Ice cream",
-        restrictions:["gluten-free","none"],
-        preferences:["non-organic","all"],
-        category:"dairy",
-        price:15,
-        picture:"images/icecream.jpg",
-    },
-    {
-        name:"Banana",
-        restrictions:["none"],
-        preferences:["organic","non-organic","all"],
-        category:"fruits",
-        price:10,
-        picture:"images/banana.jpg",
+        name:"long cut",
+        description:["A haircut starting from long hair"],
+        picture:"images/chicken.jpg",
     },
 
 ];
