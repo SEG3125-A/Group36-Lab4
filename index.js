@@ -3,29 +3,29 @@
 let allServices=[
     {
         name:"short cut",
-        description:["A haircut starting from short hair"],
+        description:["A short haircut"],
         price:20,
-        picture:"images/chicken.jpg",
+        picture:"images/shorthair.jpg",
+    },
+
+    {
+        name:"medium cut",
+        description:["A medium haircut"],
+        price:24,
+        picture:"images/medhair.jpg",
     },
 
     {
         name:"long cut",
-        description:["A haircut starting from long hair"],
+        description:["A long haircut"],
         price:28,
-        picture:"images/chicken.jpg",
-    },
-
-    {
-        name:"long cut",
-        description:["A haircut starting from long hair"],
-        price:28,
-        picture:"images/chicken.jpg",
+        picture:"images/longhair.jpg",
     },
     {
-        name:"long cut",
-        description:["A haircut starting from long hair"],
-        price:28,
-        picture:"images/chicken.jpg",
+        name:"Dye Hair",
+        description:["A service to dye hair"],
+        price:32,
+        picture:"images/dyedhair.jpg",
     },
 
 
@@ -35,26 +35,26 @@ let allServices=[
 //All barbers
 let allBarbers=[
     {
-        name:"short cut",
-        description:["A haircut starting from short hair"],
-        picture:"images/chicken.jpg",
+        name:"Adrian Hayes",
+        description:["Barber specializing in Men's cuts"],
+        picture:"images/barberA.jpg",
     },
 
     {
-        name:"long cut",
-        description:["A haircut starting from long hair"],
-        picture:"images/chicken.jpg",
+        name:"Gavin Thompson",
+        description:["Barber specializing in dying hair"],
+        picture:"images/barberB.png",
     },
 
     {
-        name:"long cut",
-        description:["A haircut starting from long hair"],
-        picture:"images/chicken.jpg",
+        name:"Ethan Marshall",
+        description:["Barber specializing in styling long hair"],
+        picture:"images/barberC.jpeg",
     },
     {
-        name:"long cut",
-        description:["A haircut starting from long hair"],
-        picture:"images/chicken.jpg",
+        name:"Marcus Rodriguez",
+        description:["Barber specializing in women's cuts"],
+        picture:"images/barberD.jpg",
     },
 
 ];
