@@ -75,7 +75,7 @@ function renderServiceCards() {
         const serviceColumn = document.createElement("div");
         serviceColumn.classList.add("col-md-4-"+Math.floor(12/numCols));
 
-        const card = createServiceCard(allServices[i]);
+        const card = createServiceCard(allServices[i], i);
         serviceColumn.appendChild(card);
         serviceRow.appendChild(serviceColumn);
     }
@@ -84,7 +84,7 @@ function renderServiceCards() {
 }
 
 // Create a service card element
-function createServiceCard(service) {
+function createServiceCard(service, i) {
     const card = document.createElement('div');
     card.classList.add('card');
 
@@ -105,9 +105,10 @@ function createServiceCard(service) {
     text.textContent = '$' + service.price.toFixed(2);
 
     const link = document.createElement('a');
-    link.href = '#appointment';
+    link.href = '#barbers';
     link.classList.add('btn', 'btn-primary');
     link.textContent = 'Choose service';
+    link.id= "service-button-" + i;
 
     cardBody.appendChild(title);
     cardBody.appendChild(text);
@@ -121,6 +122,44 @@ function createServiceCard(service) {
 
 window.addEventListener("DOMContentLoaded", renderServiceCards);
 
+
+$(document).ready(function() {
+    function appointmentDetails(val) {
+        let appointmentContainer = document.getElementById("serviceBlock");
+        str = "service: " + allServices[val].name;
+        appointmentContainer.setAttribute("value", str);
+    }
+    function barberDetails(val) {
+        let appointmentContainer = document.getElementById("barberBlock");
+        str = "barber: " + allBarbers[val].name;
+        appointmentContainer.setAttribute("value", str);
+    }
+  
+    $('#barb1').click(function() {
+        barberDetails(0);
+    })
+
+    $('#barb2').click(function() {
+        barberDetails(1);
+    })
+
+    $('#barb3').click(function() {
+        barberDetails(2);
+    })
+
+    $('#service-button-0').click(function() {
+        appointmentDetails(0);
+    })
+    $('#service-button-1').click(function() {
+        appointmentDetails(1);
+    })
+    $('#service-button-2').click(function() {
+        appointmentDetails(2);
+    })
+    $('#service-button-3').click(function() {
+        appointmentDetails(3);
+    })
+  })
 
 function submitAppointment() {
     // Your form submission logic goes here
