@@ -1,3 +1,15 @@
+//info relative to what the user selected as barber and service
+let servicePicked;
+let barberPicked;
+
+//Info relative to the appointment
+let serviceName;
+let barberName;
+let date;
+let time;
+let firstName;
+let LastName;
+let phoneNumber;
 
 //All srevices
 let allServices=[
@@ -59,34 +71,43 @@ let allBarbers=[
 
 ];
 
+function renderCards(){
+    renderServiceCards();
+    renderBarberCards();
+}
 // Render service cards
 function renderServiceCards() {
     let servicesContainer = document.getElementById("services");
-    let serviceRow = document.createElement("div");
-    serviceRow.classList.add("row");
+    let serviceRow;
 
     // Assuming each card has a maximum width of 300px
-    let cardWidth = 300;
+    let cardWidth = 200;
 
     // Calculate the number of columns based on the width of each card
     let numCols = Math.floor(window.innerWidth / cardWidth);
 
     for(let i = 0; i < allServices.length; i++) {
+        if (i % numCols === 0) { // Start a new row if the current index is a multiple of numCols
+            serviceRow = document.createElement("div");
+            serviceRow.classList.add("row");
+            servicesContainer.appendChild(serviceRow);
+            servicesContainer.appendChild(serviceRow);
+        }
+
         const serviceColumn = document.createElement("div");
-        serviceColumn.classList.add("col-md-4-"+Math.floor(12/numCols));
+        serviceColumn.classList.add("col-md-3");
 
         const card = createServiceCard(allServices[i], i);
         serviceColumn.appendChild(card);
         serviceRow.appendChild(serviceColumn);
     }
 
-    servicesContainer.appendChild(serviceRow);
 }
 
 // Create a service card element
 function createServiceCard(service, i) {
     const card = document.createElement('div');
-    card.classList.add('card');
+    card.classList.add('card','my-3');
 
     const img = document.createElement('img');
     img.classList.add('card-img-top');
@@ -102,7 +123,7 @@ function createServiceCard(service, i) {
 
     const text = document.createElement('p');
     text.classList.add('card-text');
-    text.textContent = '$' + service.price.toFixed(2);
+    text.innerHTML = '$' + service.price.toFixed(2)+'<br>'+service.description.join('<br>');
 
     const link = document.createElement('a');
     link.href = '#barbers';
@@ -120,7 +141,74 @@ function createServiceCard(service, i) {
     return card;
 }
 
-window.addEventListener("DOMContentLoaded", renderServiceCards);
+
+//render barber cards
+function renderBarberCards() {
+
+    let barbersContainer = document.getElementById("barbers");
+    let barberRow;
+
+    // Assuming each card has a maximum width of 300px
+    let cardWidth = 300;
+
+    // Calculate the number of columns based on the width of each card
+    let numCols = Math.floor(window.innerWidth / cardWidth);
+
+    for(let i = 0; i < allBarbers.length; i++) {
+        if (i % numCols === 0) { // Start a new row if the current index is a multiple of numCols
+            barberRow = document.createElement("div");
+            barberRow.classList.add("row");
+            barbersContainer.appendChild(barberRow);
+        }
+
+        const barberColumn = document.createElement("div");
+        barberColumn.classList.add("col-md-3");
+
+        const card = createBarberCard(allBarbers[i]);
+        barberColumn.appendChild(card);
+        barberRow.appendChild(barberColumn);
+    }
+
+}
+
+// Create a service card element
+function createBarberCard(barber) {
+    const card = document.createElement('div');
+    card.classList.add('card','my-3');
+
+    const img = document.createElement('img');
+    img.classList.add('card-img-top');
+    img.src = barber.picture;
+    img.alt = 'Card image';
+
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
+
+    const title = document.createElement('h4');
+    title.classList.add('card-title');
+    title.textContent = barber.name;
+
+    const description = document.createElement('p'); // Change variable name to description
+    description.classList.add('card-text');
+    description.textContent = barber.description; // Use barber.description instead of text
+
+
+    const link = document.createElement('a');
+    link.href = '#appointment';
+    link.classList.add('btn', 'btn-primary');
+    link.textContent = 'Book now';
+
+    cardBody.appendChild(title);
+    cardBody.appendChild(description);
+    cardBody.appendChild(link);
+
+    card.appendChild(img);
+    card.appendChild(cardBody);
+
+    return card;
+}
+
+window.addEventListener("DOMContentLoaded", renderCards);
 
 
 $(document).ready(function() {
