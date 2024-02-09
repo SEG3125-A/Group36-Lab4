@@ -15,9 +15,9 @@
     <!-- It helps load the script after the HTML document-->
     <script defer src="index.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -58,37 +58,20 @@
         <!--barbers section-->
         <section class="container my-4" id="barbers">
             <h2>Our barbers</h2>
-            <div class="card">
-                <img class="card-img-top" src="images/barberA.jpg" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">Adrian Hayes</h4>
-                    <p class="card-text">A random text about the price</p>
-                    <a href="#appointment" class="btn btn-primary" id="barb1">Choose barber</a>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="images/barberB.png" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">Gavin Thompson</h4>
-                    <p class="card-text">Barber specializing in dying hair</p>
-                    <a href="#appointment" class="btn btn-primary" id="barb2">Choose barber</a>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="images/barberC.jpeg" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">Ethan Marshall</h4>
-                    <p class="card-text">Barber specializing in styling long hair</p>
-                    <a href="#appointment" class="btn btn-primary" id="barb3">Choose barber</a>
-                </div>
-            </div>
         </section>
 
         <!--Appointment section-->
         <section class="container px-4 my-4 mx-auto" style="max-width: 600px;" id="appointment">
             <h2 class="text-center">Appointment</h2>
             <form id="appointmentForm">
-                <div class="form-row">
+                <div class="form-row my-4">
+                    <div class="form-group">
+                        <h4>Haircut: <spam id="serviceDetail"></spam><br>
+                        Barber: <spam id="barberDetail"></spam></h4>
+                    </div>
+                </div>
+    
+                <div class="form-row my-4">
                     <div class="form-group">
                         <label for="inputDate4">Date</label>
                         <input type="date" class="form-control" id="inputDate4" placeholder="Date">
@@ -100,24 +83,23 @@
                 </div>
 
                 <div class="form-row">
+                    <label for="">Firt name & last name</label>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="First name" id="firstName">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Last name" id="lastName">
                     </div>
-                    <div class="form-group">
-                        <input type="text" readonly class="form-control-plaintext" id="serviceBlock" value="appt"></input>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" readonly class="form-control-plaintext" id="barberBlock" value="barber"></input>
-                    </div>
                     
                 </div>
 
-                <button type="button" class="btn btn-primary mt-3" data-toggle="modal"
-                    data-target="#confirmationModal">Submit
+                <button type="button" class="btn btn-primary mt-3" data-toggle=""
+                    data-target="#confirmationModal" onclick="submitAppointment()">Submit
                     appointment</button>
+
+                    <div class="form-group" id="errorText">
+                        
+                    </div>
             </form>
 
             <!-- Modal -->
@@ -127,7 +109,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Appointment Confirmation</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="close" onclick="dismissModal()" data-dismiss="" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -135,7 +117,7 @@
                             <p>Appointment request submitted!</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary"  onclick="dismissModal()" data-dismiss="">Close</button>
                         </div>
                     </div>
                 </div>

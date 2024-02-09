@@ -3,12 +3,12 @@ let servicePicked;
 let barberPicked;
 
 //Info relative to the appointment
-let serviceName;
-let barberName;
+let serviceName="";
+let barberName="";
 let date;
 let time;
 let firstName;
-let LastName;
+let lastName;
 let phoneNumber;
 
 //All srevices
@@ -130,6 +130,12 @@ function createServiceCard(service, i) {
     link.classList.add('btn', 'btn-primary');
     link.textContent = 'Choose service';
     link.id= "service-button-" + i;
+    link.addEventListener("click",()=>{
+        serviceName=service.name;
+        let appointmentContainer = document.getElementById("serviceDetail");
+        appointmentContainer.textContent=serviceName;
+    })
+    
 
     cardBody.appendChild(title);
     cardBody.appendChild(text);
@@ -197,6 +203,11 @@ function createBarberCard(barber) {
     link.href = '#appointment';
     link.classList.add('btn', 'btn-primary');
     link.textContent = 'Book now';
+    link.addEventListener("click",()=>{
+        barberName=barber.name;
+        let appointmentContainer = document.getElementById("barberDetail");
+        appointmentContainer.textContent=barberName;
+    })
 
     cardBody.appendChild(title);
     cardBody.appendChild(description);
@@ -211,55 +222,41 @@ function createBarberCard(barber) {
 window.addEventListener("DOMContentLoaded", renderCards);
 
 
-$(document).ready(function() {
-    function appointmentDetails(val) {
-        let appointmentContainer = document.getElementById("serviceBlock");
-        str = "service: " + allServices[val].name;
-        appointmentContainer.setAttribute("value", str);
-    }
-    function barberDetails(val) {
-        let appointmentContainer = document.getElementById("barberBlock");
-        str = "barber: " + allBarbers[val].name;
-        appointmentContainer.setAttribute("value", str);
-    }
-  
-    $('#barb1').click(function() {
-        barberDetails(0);
-    })
-
-    $('#barb2').click(function() {
-        barberDetails(1);
-    })
-
-    $('#barb3').click(function() {
-        barberDetails(2);
-    })
-
-    $('#service-button-0').click(function() {
-        appointmentDetails(0);
-    })
-    $('#service-button-1').click(function() {
-        appointmentDetails(1);
-    })
-    $('#service-button-2').click(function() {
-        appointmentDetails(2);
-    })
-    $('#service-button-3').click(function() {
-        appointmentDetails(3);
-    })
-  })
-
 function submitAppointment() {
-    // Your form submission logic goes here
+    if(serviceName=="" || barberName==""){
+        document.getElementById("errorText").textContent=" Pick a service or a barber";
+        document.getElementById("errorText").style.display="block";
+        return;
+    }
+    firstName=document.getElementById("firstName").value;
+    lastName=document.getElementById("lastName").value;
+    date=document.getElementById("inputDate4").value;
+    time=document.getElementById("inputTime4").value;
+
+
+    if(firstName=="" || lastName=="" || date=="" || time==""){
+        document.getElementById("errorText").textContent="Fill all the appointment details";
+        document.getElementById("errorText").style.display="block";
+        return;
+    }
+    //remove the error message 
+    document.getElementById("errorText").style.display="none";
+    //empty all the field
+    document.getElementById("barberDetail").textContent="";
+    document.getElementById("serviceDetail").textContent="";
+
+
+    document.querySelector(".modal-body p").innerHTML="Appointment confirmed for "+firstName+" "+lastName+"<br> on "+date+" at "+time ;
 
     // Clear the form
     document.getElementById("appointmentForm").reset();
 
     // Show the confirmation modal
     $('#confirmationModal').modal('show');
-  }
 
-  // Reset the form when the modal is hidden
-  $('#confirmationModal').on('hidden.bs.modal', function () {
-    document.getElementById("appointmentForm").reset();
-  });
+}
+
+function dismissModal(){
+    $('#confirmationModal').modal('hide');
+}
+
