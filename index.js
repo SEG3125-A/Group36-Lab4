@@ -223,6 +223,7 @@ window.addEventListener("DOMContentLoaded", renderCards);
 
 
 function submitAppointment() {
+    
     if(serviceName=="" || barberName==""){
         document.getElementById("errorText").textContent=" Pick a service or a barber";
         document.getElementById("errorText").style.display="block";
@@ -232,6 +233,10 @@ function submitAppointment() {
     lastName=document.getElementById("lastName").value;
     date=document.getElementById("inputDate4").value;
     time=document.getElementById("inputTime4").value;
+    phoneNumber=document.getElementById("phone").value;
+
+    //patter which the phone number should follow
+    const pattern= /^(\d{3}[-\s]?\d{3}[-\s]?\d{4})$/;
 
 
     if(firstName=="" || lastName=="" || date=="" || time==""){
@@ -239,6 +244,13 @@ function submitAppointment() {
         document.getElementById("errorText").style.display="block";
         return;
     }
+
+    if(!pattern.test(phoneNumber)){
+        document.getElementById("errorText").textContent=" Enter a write phone format";
+        document.getElementById("errorText").style.display="block";
+        return
+    }
+
     //remove the error message 
     document.getElementById("errorText").style.display="none";
     //empty all the field
