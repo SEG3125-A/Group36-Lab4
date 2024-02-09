@@ -225,7 +225,7 @@ window.addEventListener("DOMContentLoaded", renderCards);
 function submitAppointment() {
     
     if(serviceName=="" || barberName==""){
-        document.getElementById("errorText").textContent=" Pick a service or a barber";
+        document.getElementById("errorText").textContent=" Select a service and a barber";
         document.getElementById("errorText").style.display="block";
         return;
     }
@@ -246,7 +246,7 @@ function submitAppointment() {
     }
 
     if(!pattern.test(phoneNumber)){
-        document.getElementById("errorText").textContent=" Enter a write phone format";
+        document.getElementById("errorText").textContent=" Correct the phone format";
         document.getElementById("errorText").style.display="block";
         return
     }

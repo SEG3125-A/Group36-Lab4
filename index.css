@@ -36,6 +36,11 @@ section h2 {
     bottom:20px;
 }
 
+#appointment a{
+    color:white;
+    text-decoration: none;
+}
+
 #serviceDetail, #barberDetail{
     color:rgb(13, 45, 142);
     text-transform: uppercase;
